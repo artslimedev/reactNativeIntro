@@ -10,8 +10,8 @@ export default function App() {
     <>
       <View style={styles.container}>
         <LittleLemonHeader />
-        <MenuItems />
-        {/* <WelcomeScreen /> */}
+        {/* <MenuItems /> */}
+        <WelcomeScreen />
       </View>
       <View style={styles.footerContainer}>
         <LittleLemonFooter />
@@ -23,7 +23,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#333333",
+    backgroundColor: "#FDD69B",
   },
   footerContainer: {
     flex: 0.05,

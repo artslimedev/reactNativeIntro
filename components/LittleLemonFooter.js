@@ -15,6 +15,8 @@ const footerStyles = StyleSheet.create({
   footer: {
     flex: 1,
     marginBottom: 10,
+    borderTopColor: "black",
+    borderTopWidth: 5,
   },
   footerText: {
     padding: 5,

@@ -1,7 +1,8 @@
 import * as React from "react";
-import { ScrollView, Text, View, StyleSheet } from "react-native";
+import { ScrollView, Text, View, StyleSheet, TextInput } from "react-native";
 
 const WelcomeScreen = () => {
+  const [firstName, onChangeFirstName] = React.useState("");
   return (
     <ScrollView style={styles.container} indicatorStyle={"white"}>
       <Text style={styles.titleText}>Welcome Tiffany</Text>
@@ -15,6 +16,12 @@ const WelcomeScreen = () => {
         virtual kiss, a way to send her a virtual high five, and a way to send
         her a virtual fist bump.
       </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeFirstName}
+        value={firstName}
+        placeholder="First Name"
+      />
     </ScrollView>
   );
 };
@@ -24,17 +31,27 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleText: {
-    padding: 40,
+    padding: 20,
     fontSize: 30,
     color: "black",
     textAlign: "center",
   },
   baseText: {
-    fontSize: 38,
+    fontSize: 20,
     padding: 20,
-    marginVertical: 8,
+    marginVertical: 0,
     color: "black",
     textAlign: "center",
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    fontSize: 16,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 10,
+    backgroundColor: "rgba(255, 255, 255, .4)",
   },
 });
 

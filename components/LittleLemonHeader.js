@@ -17,10 +17,13 @@ const headerStyles = StyleSheet.create({
     backgroundColor: "#FDD69B",
   },
   headerText: {
-    padding: 57,
+    marginTop: 60,
+    paddingBottom: 45,
     fontSize: 30,
     color: "333333",
     textAlign: "center",
+    borderBottomColor: "black",
+    borderBottomWidth: 5,
   },
 });
 
