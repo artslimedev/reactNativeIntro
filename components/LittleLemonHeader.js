@@ -5,7 +5,7 @@ const LittleLemonHeader = () => {
   return (
     <>
       <View style={headerStyles.header}>
-        <Text style={headerStyles.headerText}>Da Bess</Text>
+        <Text style={headerStyles.headerText}>Tiffany Da Bess</Text>
       </View>
     </>
   );
@@ -14,7 +14,7 @@ const LittleLemonHeader = () => {
 const headerStyles = StyleSheet.create({
   header: {
     flex: 0.125,
-    backgroundColor: "#EE9972",
+    backgroundColor: "#FDD69B",
   },
   headerText: {
     padding: 57,

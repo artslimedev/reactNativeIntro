@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flex: 0.05,
-    backgroundColor: "#EE9972",
+    backgroundColor: "#FDD69B",
   },
 });
