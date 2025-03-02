@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }) {
       style={styles.container}
       contentContainerStyle={{ justifyContent: "center", alignItems: "center" }}
     >
-      <Text style={styles.headerText}>Welcome Tiffany</Text>
+      <Text style={styles.headerText}>Welcome</Text>
       <Text style={styles.regularText}>Login to continue </Text>
       <TextInput
         style={styles.input}
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    width: 400,
+    width: "90%",
     margin: 12,
     fontSize: 16,
     padding: 10,

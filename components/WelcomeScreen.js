@@ -38,21 +38,19 @@ const WelcomeScreen = ({ navigation }) => {
             accessible={true}
             accessibilityLabel="Little Lemon Logo"
           />
-          <Text style={styles.titleText}>Welcome Tiffany</Text>
+          <Text style={styles.titleText}>Welcome</Text>
         </View>
-        <Pressable
+        {/* <Pressable
           onPress={() => navigation.navigate("Menu")}
           style={styles.button}
         >
           <Text>View Menu</Text>
-        </Pressable>
+        </Pressable> */}
         <Text style={styles.baseText}>
-          Tiffany is actually the best person ever. She's so awesome I'm
-          building this app just to say it. But now I need to add more features
-          to make it look like I'm not just building this app for Tiffany. So
-          here's a form for to fill out for practice. I need to add more things
-          to this app as i finish the course. I'm going to add a login screen
-          and a menu screen.
+          I need to add more features to make it look like I'm not just building
+          this app for no reason. So here's a form for to fill out for practice.
+          I need to add more things to this app as i finish the course. I'm
+          going to add a login screen and a menu screen.
         </Text>
         <TextInput
           style={styles.input}

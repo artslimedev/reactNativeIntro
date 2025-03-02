@@ -92,11 +92,10 @@ const MenuScreen = ({ navigation }) => {
         sections={menuItemsToDisplay}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
-        ListFooterComponent={LittleLemonFooter}
       />
-      <Pressable onPress={() => navigation.goBack()} style={menuStyles.button}>
+      {/* <Pressable onPress={() => navigation.goBack()} style={menuStyles.button}>
         <Text>Go Back</Text>
-      </Pressable>
+      </Pressable> */}
     </View>
   );
 };

@@ -14,13 +14,12 @@ const LittleLemonFooter = () => {
 const footerStyles = StyleSheet.create({
   footer: {
     flex: 1,
-    marginBottom: 10,
     borderTopColor: "black",
-    borderTopWidth: 5,
+    borderTopWidth: 2,
   },
   footerText: {
-    padding: 5,
-    fontSize: 18,
+    padding: 0,
+    fontSize: 10,
     color: "black",
     textAlign: "center",
     fontWeight: "bold",
