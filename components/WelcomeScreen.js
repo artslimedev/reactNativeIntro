@@ -6,29 +6,53 @@ import {
   StyleSheet,
   TextInput,
   KeyboardAvoidingView,
+  Image,
+  useColorScheme,
+  Pressable,
 } from "react-native";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   const [firstName, onChangeFirstName] = React.useState("");
   const [lastName, onChangeLastName] = React.useState("");
   const [message, onChangeMessage] = React.useState("");
+  const colorScheme = useColorScheme();
+  const isDarkMode = colorScheme !== "light";
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="padding">
+    <KeyboardAvoidingView
+      style={isDarkMode ? styles.darkContainer : styles.container}
+      behavior="padding"
+    >
       <ScrollView
-        // style={styles.container}
         indicatorStyle={"white"}
         keyboardDismissMode="none"
+        contentContainerStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <Text style={styles.titleText}>Welcome Tiffany</Text>
+        <View style={styles.headerWrapper}>
+          <Image
+            source={require("../img/logo.png")}
+            resizeMode="contain"
+            style={styles.logo}
+            accessible={true}
+            accessibilityLabel="Little Lemon Logo"
+          />
+          <Text style={styles.titleText}>Welcome Tiffany</Text>
+        </View>
+        <Pressable
+          onPress={() => navigation.navigate("Menu")}
+          style={styles.button}
+        >
+          <Text>View Menu</Text>
+        </Pressable>
         <Text style={styles.baseText}>
           Tiffany is actually the best person ever. She's so awesome I'm
           building this app just to say it. But now I need to add more features
-          to showcase her awesomeness. I'm thinking of adding a photo gallery, a
-          video player, a chat feature, and a way to send her money. I'm also
-          thinking of adding a way to send her a message, a way to send her a
-          gift, and a way to send her a virtual hug. I'm also thinking of adding
-          a way to send her a virtual kiss, a way to send her a virtual high
-          five, and a way to send her a virtual fist bump.
+          to make it look like I'm not just building this app for Tiffany. So
+          here's a form for to fill out for practice. I need to add more things
+          to this app as i finish the course. I'm going to add a login screen
+          and a menu screen.
         </Text>
         <TextInput
           style={styles.input}
@@ -58,6 +82,9 @@ const WelcomeScreen = () => {
           numberOfLines={4}
           maxLength={200}
         />
+        <Pressable onPress={() => setLogin(true)} style={styles.button}>
+          <Text>Submit</Text>
+        </Pressable>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -66,12 +93,30 @@ const WelcomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#FDD69B",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+  darkContainer: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,.2)",
+    justifyContent: "center",
+    alignContent: "center",
   },
   titleText: {
     padding: 20,
     fontSize: 30,
     color: "black",
     textAlign: "center",
+  },
+  logo: {
+    width: 100,
+    height: 100,
+  },
+  headerWrapper: {
+    justifyContent: "center",
+    flexDirection: "row",
+    paddingTop: 20,
   },
   baseText: {
     fontSize: 20,
@@ -82,6 +127,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    width: "90%",
     margin: 12,
     fontSize: 16,
     padding: 10,
@@ -92,6 +138,7 @@ const styles = StyleSheet.create({
   },
   messageInput: {
     height: 100,
+    width: "90%",
     margin: 12,
     fontSize: 16,
     padding: 10,
@@ -99,6 +146,26 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderRadius: 10,
     backgroundColor: "rgba(255, 255, 255, .4)",
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    paddingVertical: 12,
+    width: 200,
+    margin: 12,
+    borderRadius: 10,
+    elevation: 3,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "rgba(255, 255, 255, .4)",
+  },
+  buttonText: {
+    fontSize: 20,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "#333333",
   },
 });
 

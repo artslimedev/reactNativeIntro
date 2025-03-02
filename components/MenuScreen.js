@@ -1,5 +1,13 @@
 import * as React from "react";
-import { Text, View, StyleSheet, FlatList, SectionList } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  SectionList,
+  Pressable,
+} from "react-native";
+import LittleLemonFooter from "./LittleLemonFooter";
 
 const menuItemsToDisplay = [
   {
@@ -60,7 +68,7 @@ const MenuItem = ({ name, price }) => {
   );
 };
 
-const MenuItems = () => {
+const MenuScreen = ({ navigation }) => {
   const renderItem = ({ item }) => {
     return (
       <MenuItem
@@ -84,7 +92,11 @@ const MenuItems = () => {
         sections={menuItemsToDisplay}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
+        ListFooterComponent={LittleLemonFooter}
       />
+      <Pressable onPress={() => navigation.goBack()} style={menuStyles.button}>
+        <Text>Go Back</Text>
+      </Pressable>
     </View>
   );
 };
@@ -122,6 +134,26 @@ const menuStyles = StyleSheet.create({
     color: "black",
     textAlign: "center",
   },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    paddingVertical: 12,
+    width: 200,
+    margin: 12,
+    borderRadius: 10,
+    elevation: 3,
+    borderColor: "black",
+    borderWidth: 1,
+    backgroundColor: "rgba(255, 255, 255, .4)",
+  },
+  buttonText: {
+    fontSize: 20,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "#333333",
+  },
 });
 
-export default MenuItems;
+export default MenuScreen;
