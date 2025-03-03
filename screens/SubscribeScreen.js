@@ -21,6 +21,7 @@ const SubscribeScreen = () => {
   const handleSubscribe = () => {
     setIsSubscribed(true);
     Alert.alert("Thank you for subscribing to our newsletter!");
+    setEmail("");
   };
   return (
     <KeyboardAvoidingView
